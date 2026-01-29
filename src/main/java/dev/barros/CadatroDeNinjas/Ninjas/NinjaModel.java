@@ -1,9 +1,11 @@
-package dev.barros.CadatroDeNinjas;
+package dev.barros.CadatroDeNinjas.Ninjas;
 
+import dev.barros.CadatroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
 
+
 @Entity
-@Table(name ="tb_cadastro")
+@Table(name = "tb_cadastro")
 public class NinjaModel {
 
     @Id
@@ -12,6 +14,9 @@ public class NinjaModel {
     private String nome;
     private String email;
     private int idade;
+    @ManyToOne //um ninja vai ter somente uma missão
+    @JoinColumn(name ="missoes_id") //chave estrangeira
+    private MissoesModel missoes;
 
     public NinjaModel() {
 

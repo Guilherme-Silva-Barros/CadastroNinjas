@@ -1,4 +1,4 @@
-package dev.barros.CadatroDeNinjas;
+package dev.barros.CadatroDeNinjas.Ninjas;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
