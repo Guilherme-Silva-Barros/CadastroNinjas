@@ -2,11 +2,15 @@ package dev.barros.CadatroDeNinjas.Missoes;
 
 import dev.barros.CadatroDeNinjas.Ninjas.NinjaModel;
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.List;
 
 @Entity
 @Table(name = "tb_missoes")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class MissoesModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
