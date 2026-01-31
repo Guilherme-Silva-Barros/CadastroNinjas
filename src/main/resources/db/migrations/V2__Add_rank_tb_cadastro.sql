@@ -2,6 +2,3 @@
 
 ALTER TABLE tb_cadastro
 ADD COLUMN rank VARCHAR(255);
-
-ALTER TABLE tb_cadastro
-ADD COLUMN rank VARCHAR(255);

@@ -1,5 +1,6 @@
 package dev.barros.CadatroDeNinjas.Missoes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.barros.CadatroDeNinjas.Ninjas.NinjaModel;
 import jakarta.persistence.*;
 import lombok.*;
@@ -18,7 +19,9 @@ public class MissoesModel {
     private String nome;
     private String dificuldade;
     @OneToMany(mappedBy = "missoes") //uma missão vai ter um grupo de ninjas
+    @JsonIgnore
     private List<NinjaModel> ninjas;
+
     public MissoesModel(Long id) {
         this.id = id;
     }
@@ -29,27 +32,4 @@ public class MissoesModel {
         this.dificuldade = dificuldade;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getDificuldade() {
-        return dificuldade;
-    }
-
-    public void setDificuldade(String dificuldade) {
-        this.dificuldade = dificuldade;
-    }
 }
