@@ -28,5 +28,12 @@ public class MissoesServices {
         Optional<MissoesModel> missoesModel = missoesRepository.findById(id);
         return missoesModel.orElse(null);
     }
+    //atualizar missoes
+
+
+    //deletar missoes
+    public void deletarMissao(Long id) {
+        missoesRepository.deleteById(id);
+    }
 
 }

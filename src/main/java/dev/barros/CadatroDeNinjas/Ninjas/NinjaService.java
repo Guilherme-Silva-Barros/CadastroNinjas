@@ -9,7 +9,7 @@ import java.util.Optional;
 public class NinjaService {
 
     private NinjaRepository ninjaRepository;
-
+    // C R U D
     public NinjaService(NinjaRepository ninjaRepository) {
         this.ninjaRepository = ninjaRepository;
     }
@@ -28,6 +28,13 @@ public class NinjaService {
     public NinjaModel listarNinjaPorId(Long id) {
         Optional<NinjaModel> ninjaPorId = ninjaRepository.findById(id);
         return ninjaPorId.orElse(null);
+    }
+    // atualizar ninjas
+
+
+    //deletar ninjas - tem que ser VOID
+    public void deletarNinja(Long id) {
+        ninjaRepository.deleteById(id);
     }
 
 
