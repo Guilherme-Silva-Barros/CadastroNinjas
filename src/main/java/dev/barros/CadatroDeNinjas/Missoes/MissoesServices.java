@@ -29,7 +29,13 @@ public class MissoesServices {
         return missoesModel.orElse(null);
     }
     //atualizar missoes
-
+    public MissoesModel atualizarMissao(Long id, MissoesModel missoesAtualizado) {
+        if(missoesRepository.existsById(id)) {
+            missoesAtualizado.setId(id);
+            return missoesRepository.save(missoesAtualizado);
+        }
+        return null;
+    }
 
     //deletar missoes
     public void deletarMissao(Long id) {

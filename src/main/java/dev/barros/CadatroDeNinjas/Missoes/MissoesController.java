@@ -40,9 +40,9 @@ public class MissoesController {
 
     //
     //alterar missao(U)
-    @PutMapping("/alterarMissao")
-    public String alterarMissao() {
-        return "Missao Alterada com sucesso";
+    @PutMapping("/alterarMissao/{id}")
+    public MissoesModel alterarMissao(@PathVariable Long id, @RequestBody MissoesModel missoesAtualizado) {
+        return services.atualizarMissao(id, missoesAtualizado);
     }
 
     //deletar missao(D)
