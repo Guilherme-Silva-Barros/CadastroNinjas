@@ -16,7 +16,10 @@ public class MissoesModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(unique = true)
     private String nome;
+
     private String dificuldade;
     @OneToMany(mappedBy = "missoes") //uma missão vai ter um grupo de ninjas
     @JsonIgnore

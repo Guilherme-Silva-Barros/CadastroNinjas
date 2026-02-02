@@ -22,8 +22,9 @@ public class NinjaController {
 
     //Adicionar ninja (C)
     @PostMapping("/criarNinja")
-    public String criarNinja() {
-        return "Ninja Criado com sucesso";
+    public NinjaModel criarNinja(@RequestBody NinjaModel ninja) {
+
+        return ninjaService.criarNinja(ninja);
     }
 
     //listar ninjas (R)
@@ -31,6 +32,12 @@ public class NinjaController {
     public List<NinjaModel> listarNinjas() {
 
         return ninjaService.listarNinjas();
+    }
+
+    //listar ninjas pro id
+    @GetMapping("/ninjasId/{id}")
+    public NinjaModel ninjaID(@PathVariable Long id) {
+        return ninjaService.listarNinjaPorId(id);
     }
 
     //procurar ninja (R)

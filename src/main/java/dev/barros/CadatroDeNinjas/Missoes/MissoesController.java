@@ -9,34 +9,45 @@ import java.util.List;
 public class MissoesController {
 
     private MissoesServices services;
+
     public MissoesController(MissoesServices services) {
         this.services = services;
     }
+
     //criar missão(C)
     @PostMapping("/criarMissao")
-    public String criarMissao(){
-        return "Missao Criada com sucesso";
+    public MissoesModel criarMissao(@RequestBody MissoesModel missoes) {
+        return services.criarMissao(missoes);
     }
 
     //mostrar missao(R)
     @GetMapping("/mostrarMissao")
-    public List<MissoesModel> mostrarMissao(){
+    public List<MissoesModel> mostrarMissao() {
         return services.listarMissoes();
     }
+
+    //missoes por ID
+    @GetMapping("/missoesID/{id}")
+    public MissoesModel missoesID(@PathVariable Long id) {
+        return services.misssoesId(id);
+    }
+
     //procurar missao(R)
     @GetMapping("/procurarMissao")
-    public String procurarMissao(){
+    public String procurarMissao() {
         return "Missao Procurado com sucesso";
     }
 
+    //
     //alterar missao(U)
     @PutMapping("/alterarMissao")
-    public String alterarMissao(){
+    public String alterarMissao() {
         return "Missao Alterada com sucesso";
     }
+
     //deletar missao(D)
     @DeleteMapping("/deletarMissao")
-    public String deletarMissao(){
+    public String deletarMissao() {
         return "Missao Deletado com sucesso";
     }
 }
