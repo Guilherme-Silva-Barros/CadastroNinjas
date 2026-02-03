@@ -10,8 +10,8 @@ import java.util.stream.Stream;
 @Service
 public class NinjaService {
 
-    private NinjaRepository ninjaRepository;
-    NinjaMapper ninjaMapper = new NinjaMapper();
+    private final NinjaRepository ninjaRepository;
+    private final NinjaMapper ninjaMapper ;
     // C R U D
 
 
