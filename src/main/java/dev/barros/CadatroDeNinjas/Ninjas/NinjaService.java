@@ -41,7 +41,7 @@ public class NinjaService {
         return  ninjaPorId.map(ninjaMapper::map).orElse(null);
     }
 
-    // atualizar ninjas
+    // atualizar ninja
     public NinjaDTO alterarNinja(Long id, NinjaDTO ninjaDTO) {
         Optional<NinjaModel> ninjaExistente = ninjaRepository.findById(id);
         if(ninjaExistente.isPresent()) {
