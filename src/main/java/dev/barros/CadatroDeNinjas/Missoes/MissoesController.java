@@ -23,26 +23,19 @@ public class MissoesController {
 
     //mostrar missao(R)
     @GetMapping("/mostrarMissao")
-    public List<MissoesModel> mostrarMissao() {
+    public List<MissoesDTO> mostrarMissao() {
         return services.listarMissoes();
     }
 
     //missoes por ID
     @GetMapping("/missoesID/{id}")
-    public MissoesModel missoesID(@PathVariable Long id) {
+    public MissoesDTO missoesID(@PathVariable Long id) {
         return services.misssoesId(id);
     }
 
-    //procurar missao(R)
-    @GetMapping("/procurarMissao")
-    public String procurarMissao() {
-        return "Missao Procurado com sucesso";
-    }
-
-    //
     //alterar missao(U)
     @PutMapping("/alterarMissao/{id}")
-    public MissoesModel alterarMissao(@PathVariable Long id, @RequestBody MissoesModel missoesAtualizado) {
+    public MissoesDTO alterarMissao(@PathVariable Long id, @RequestBody MissoesDTO missoesAtualizado) {
         return services.atualizarMissao(id, missoesAtualizado);
     }
 
