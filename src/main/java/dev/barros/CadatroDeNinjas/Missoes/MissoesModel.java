@@ -12,6 +12,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class MissoesModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,14 +26,5 @@ public class MissoesModel {
     @JsonIgnore
     private List<NinjaModel> ninjas;
 
-    public MissoesModel(Long id) {
-        this.id = id;
-    }
-
-    public MissoesModel(Long id, String nome, String dificuldade) {
-        this.id = id;
-        this.nome = nome;
-        this.dificuldade = dificuldade;
-    }
 
 }
